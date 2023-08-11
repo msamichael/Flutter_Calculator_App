@@ -3,7 +3,7 @@ import 'package:math_expressions/math_expressions.dart';
 
 
 
-var equation =[];
+// var equation =[];
 var result = 0.0;
 var solution = "";
 
@@ -47,22 +47,22 @@ class _HomePageState extends State<HomePage> {
               ),
               Row(
                 children: [
-...getTextCustomRow(
+getTextCustomRow(
                     "AC",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
                   ),
-                  ...getTextCustomRow(
+                  getTextCustomRow(
                     "x",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
                   ),
-                  ...getTextCustomRow(
+                  getTextCustomRow(
                     "+/-",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
                   ),
-                  ...getTextCustomRow(
+                  getTextCustomRow(
                     "/",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   ...getTextNumberRow(1, Colors.grey),
-                  ...getTextCustomRow(
+                  getTextCustomRow(
                     "X",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   ...getTextNumberRow(4, Colors.grey),
-                  ...getTextCustomRow(
+                  getTextCustomRow(
                     "-",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   ...getTextNumberRow(7, Colors.grey),
-                  ...getTextCustomRow(
+                  getTextCustomRow(
                     "+",
                     Colors.blueGrey,
                     Colors.lightBlueAccent,
@@ -105,10 +105,10 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               Row(
                 children: [
-                  ...getTextCustomRow("%", Colors.grey, Colors.white),
-                  ...getTextCustomRow("0", Colors.grey, Colors.white),
-                  ...getTextCustomRow(".", Colors.grey, Colors.white),
-                  ...getTextCustomRow("=", Colors.lightBlue, Colors.black)
+                  getTextCustomRow("%", Colors.grey, Colors.white),
+                  getTextCustomRow("0", Colors.grey, Colors.white),
+                  getTextCustomRow(".", Colors.grey, Colors.white),
+                  getTextCustomRow("=", Colors.lightBlue, Colors.black)
                 ],
               ),
               const SizedBox(
@@ -157,11 +157,9 @@ List<Widget> getTextNumberRow(iVal, buttonColor){
  return childs; 
 }
 
- List<Widget> getTextCustomRow(buttonVal, buttonBGcolor, buttonFGcolor) {
-    List<Widget> childs = [];
-    for (var i = 0; i < 1; i++) {
-      childs.add(
-        Row(
+ Widget getTextCustomRow(buttonVal, buttonBGcolor, buttonFGcolor) {
+    
+       return Row(
           children: [
             ElevatedButton(
               onPressed: (() => {
@@ -215,12 +213,11 @@ List<Widget> getTextNumberRow(iVal, buttonColor){
             ),
             const SizedBox(width: 25)
           ],
-        ),
       );
     }
 
-    return childs;
-  }
+  
+  
 
   solveEquations() async {
     ContextModel cm = ContextModel();
